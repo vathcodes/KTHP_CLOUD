@@ -1,0 +1,41 @@
+7. API tạo đơn hàng (Create Order)
+URL: /api/orders
+Method: POST
+Headers:
+Authorization: Bearer {token} token user
+Request Body (JSON):
+{
+  "food": ["userID", "foodID"]
+}
+
+
+8. API lấy đơn hàng (Get Orders)
+URL: /api/orders
+
+Method: GET
+
+Headers:
+
+Authorization: Bearer {token} token cua admin de lay order tu user
+
+
+9. API cập nhật trạng thái đơn hàng (Update Order Status)
+URL: /api/orders/:id
+Method: PUT
+Headers:
+Authorization: Bearer {token} admin
+Request Body (JSON):
+{
+  "status": "Success"
+}
+
+10. API xóa đơn hàng (Delete Orders)
+URL: /api/orders
+Method: DELETE
+Headers:
+Authorization: Bearer {token} admin
+Request Body (JSON):
+
+{
+  "ids": ["userID", "foodID"]
+}

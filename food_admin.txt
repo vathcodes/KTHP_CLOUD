@@ -1,0 +1,66 @@
+1. API đăng ký (Register)
+URL: /api/auth/register
+Method: POST
+Request Body (JSON):
+{
+  "name": "thien dep zai",
+  "email": "example@example.com",
+  "password": "password123",
+  "role": "user"
+}
+
+2. API đăng nhập (Login)
+URL: /api/auth/login
+Method: POST
+Request Body (JSON):
+{
+  "email": "example@example.com",
+  "password": "password123"
+  lúc này sẽ có token của user, nếu chọn role admin thì sẽ có role của admin
+}
+
+
+3. API lấy danh sách món ăn (Get Foods)
+URL: /api/foods
+
+Method: GET
+
+Headers:
+
+Authorization: Bearer {token} lúc này get thì token cua admin lan user deu duoc
+
+
+4. API tạo món ăn (Create Food)
+URL: /api/foods
+Method: POST
+Headers:
+Authorization: Bearer {token} token của adminadmin
+Request Body (JSON):
+{
+  "name": "Bánh Mì",
+  "price": 30000,
+  "description": "Bánh mì ngon",
+  "imageUrl": "http://example.com/image.jpg",
+  "category": "Breakfast"
+}
+
+
+5. API cập nhật món ăn (Update Food)
+URL: /api/foods/:id
+Method: PUT
+Headers:
+Authorization: Bearer {token} admin
+Request Body (JSON):
+{
+  "name": "Bánh Mì Xíu Mại",
+  "price": 35000,
+  "description": "Bánh mì xíu mại ngon"
+}
+
+6. API xóa món ăn (Delete Food)
+URL: /api/foods/:id
+Method: DELETE
+Headers:
+Authorization: Bearer {token} admin
+
+
