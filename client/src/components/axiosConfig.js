@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5000/api', // Đảm bảo base URL đúng
+  baseURL: 'https://kthp-cloud.onrender.com/api', // Đảm bảo base URL đúng
 });
 
 // Thêm interceptor để gửi token vào header của mỗi request
