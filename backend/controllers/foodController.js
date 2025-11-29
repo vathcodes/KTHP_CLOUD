@@ -54,7 +54,7 @@ export const getFoods = async (req, res) => {
 
     const foods = result.records.map((record) => {
       return {
-        id: record.get("id").toNumber(), // Chuyển Neo4j Integer → JS number
+        id: record.get("id").toNumber(), 
         ...record.get("f").properties
       };
     });

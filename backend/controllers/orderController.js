@@ -101,7 +101,7 @@ export const updateOrderStatus = async (req, res) => {
   const session = driver.session();
   try {
     const { status } = req.body;
-    const orderId = req.params.id; // UUID string từ frontend
+    const orderId = req.params.id; 
 
     const result = await session.run(
       `MATCH (o:Order {id: $orderId})

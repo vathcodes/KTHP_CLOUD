@@ -70,7 +70,7 @@ export const login = async (req, res) => {
         }
 
         // Tạo JWT token
-        const token = generateToken({ id: user.email, role: user.role }); // dùng email làm id
+        const token = generateToken({ id: user.email, role: user.role }); 
 
         res.status(200).json({ message: 'Login successful', token });
     } catch (error) {
