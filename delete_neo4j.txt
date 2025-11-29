@@ -1,0 +1,30 @@
+1. XÓA TẤT CẢ USER
+
+Nếu bạn muốn xóa tất cả node có label User:
+
+✔ Không xóa quan hệ (nếu chắc không có quan hệ)
+MATCH (n:User)
+DELETE n;
+
+✔ Xóa luôn cả quan hệ liên quan (an toàn hơn)
+MATCH (n:User)
+DETACH DELETE n;
+
+🟦 2. XÓA TỪNG USER THEO EMAIL
+
+Ví dụ xóa user có email "admin@gmail.com":
+
+MATCH (u:User {email: "admin@gmail.com"})
+DETACH DELETE u;
+
+🟩 3. XÓA TỪNG USER THEO ID NEO4J
+
+Nếu bạn thấy ID (giả sử ID = 2):
+
+MATCH (u)
+WHERE ID(u) = 2
+DETACH DELETE u;
+
+🟨 4. Kiểm tra danh sách User trước khi xóa
+MATCH (n:User)
+RETURN n;
